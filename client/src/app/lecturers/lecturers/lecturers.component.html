@@ -1,0 +1,30 @@
+
+
+<div>
+  <table *ngFor="let lecturer of lecturers" (click)="openProfile(lecturer)"> 
+    <tr >
+
+      <img [src]="imagePath(lecturer.photo)" width="50" height="50" />
+      <!-- <td>First Name: </td> -->
+      <td>{{lecturer.first_name}} {{lecturer.last_name}}</td>
+    </tr>
+    <tr>
+      <!-- <td>Last Name: </td> -->
+      <!-- <td>{{lecturer.last_name}}</td> -->
+    </tr>
+    <tr>
+      <!-- <td>E-mail: </td> -->
+      <td>{{lecturer.email}}</td>
+    </tr>
+    <tr>
+      <!-- <td>Phone: </td> -->
+      <td>{{lecturer.phone}}</td>
+    </tr>
+    <tr>
+      <!-- <td>Start Date: </td> -->
+      <!-- <td>{{lecturer.start_date}}</td> -->
+    </tr>
+    <!-- <button class="" type="button">Open profile</button> -->
+  </table>
+ 
+</div> 
