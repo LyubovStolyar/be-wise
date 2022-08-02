@@ -2,7 +2,7 @@
    Courses
     <!-- {{title}} -->
     <small >
-        ({{ totalItems }})
+        <!-- ({{ totalItems }}) -->
     </small>
 </h2>
 
@@ -21,14 +21,14 @@
                     <i [ngClass]="displaySort('email')"></i>
                 </button> -->
             </th>
-            <th >Phone</th>
+            <!-- <th >Phone</th> -->
            
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let course of courses">
-            <td>{{course.id}} {{course.name}}</td>
-            <td></td>
+            <td>( {{course.id}} ) {{course.name}}</td>
+            <!-- <td></td> -->
             <td> $ {{course.price}}</td>
          
         </tr>
