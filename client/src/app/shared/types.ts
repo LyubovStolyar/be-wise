@@ -19,6 +19,17 @@ export interface Courses {
   lecturer: string;
 }
 
+export interface Course {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  date_start: Date;
+  lessons_quantity: number;
+  category: string;
+  lecturer: string;
+}
+
 export class Lecturer implements Lecturers {
   id?: number | undefined;
   first_name: string;
@@ -39,3 +50,16 @@ export class Lecturer implements Lecturers {
     this.start_date = obj.start_date;
   }
 }
+
+export interface CoursesSort {
+  column: sortColumn;
+  dirAsc: boolean;
+  filter: string;
+}
+
+export type sortColumn = 'name' | 'price' | '';
+
+export interface FilePath {
+  name: string;
+}
+

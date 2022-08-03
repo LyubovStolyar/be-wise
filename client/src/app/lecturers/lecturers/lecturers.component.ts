@@ -35,7 +35,8 @@ this.router.navigate(['/','profile', {lecturer: JSON.stringify(lecturer)}])
 }
 
 imagePath(image: string | null): string {
-  return !image ? '' : `../../assets/images/${image}`;
+
+  return !image ? '' : `../../assets/images/${image}.jpg`;
 }
 
 }
