@@ -29,15 +29,15 @@
             <th>
                Course name
         <button (click)="sortCourses('name', '')" >
-          <div [innerHTML]="directionArrow"></div>
-                    <i [ngClass]="displaySort('name')"></i>
+          <div [innerHTML]="directionArrowName"></div>
+                    <!-- <i [ngClass]="displaySort('name')"></i> -->
                 </button>
             </th>
             <th>
                 Price
         <button (click)="sortCourses('price', '')"> 
-          <div [innerHTML]="directionArrow"></div>
-                    <i [ngClass]="displaySort('price')"></i>
+          <div [innerHTML]="directionArrowPrice"></div>
+                    <!-- <i [ngClass]="displaySort('price')"></i> -->
                 </button>
             </th>
             <!-- <th >Phone</th> -->
@@ -51,7 +51,8 @@
          
         <button (click)="toggleForm(course.id)"> 
         
-          <div [innerHTML]="icon"></div>
+          <div *ngIf="id == course.id" [innerHTML]= "iconMinus"></div>
+          <div *ngIf="id != course.id" [innerHTML]= "iconPlus"></div>
         
         </button>
 
@@ -61,7 +62,7 @@
     <tr *ngIf="id == course.id">
         <td colspan="2">
        
-        Start date: {{ course.date_start }}
+        Years of experience: {{ course.date_start | agePipe }}
         <br>
         Number of classes: {{ course.lessons_quantity }}
         <br>

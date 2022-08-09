@@ -7,18 +7,20 @@ import { CoreModule } from "./core/core.module";
 import { LecturersModule } from './lecturers/lecturers.module';
 import { SharedModule } from './shared/shared.module';
 import { CoursesComponent } from './courses/courses.component';
+import { AgePipePipe } from './shared/pipe/age-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent
+    CoursesComponent,
+    AgePipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     LecturersModule,
-    SharedModule,
+    SharedModule
   
     
   ],

@@ -18,8 +18,10 @@ showForm = false;
 id: string = '';
 tableSort!: CoursesSort;
 listOfCourses: Array<string>=[];
-directionArrow: string = '&#94';
-icon: string = '&#43';
+directionArrowName: string = '&#45';
+directionArrowPrice: string = '&#45';
+iconPlus: string = '&#43';
+iconMinus: string = '&#45';
 
   constructor(private route:Router, private apiService: ApiService) { }
 
@@ -56,8 +58,8 @@ toggleForm(newId:string) {
  
 }
   else this.id = newId;
-  let icon = this.icon ? '&#43' : '&#45';
-  return icon;
+ // let icon = this.icon ? '&#43' : '&#45';
+ // return icon;
 }
 
 registerNow(){}
@@ -76,6 +78,7 @@ if(column){
       this.tableSort.column = column;
       this.tableSort.dirAsc = true;
   }
+  this.displaySort(column, this.tableSort.dirAsc);
 }
   const direction = this.tableSort.dirAsc ? 'ASC' : 'DESC';
 
@@ -86,11 +89,11 @@ if(column){
   })
 }
 
- displaySort(column: sortColumn): string {
-        if (this.tableSort.column === column) {
-          this.directionArrow =  this.tableSort.dirAsc ? '&#709' : '&#94';
-        }
-        return this.directionArrow;
+ displaySort(column: sortColumn, dir: boolean): void {
+       
+  this.directionArrowName = column == 'name' ? dir ? '&#709' : '&#94' : '&#45';
+  this.directionArrowPrice = column == 'price' ? dir ? '&#709' : '&#94' : '&#45';
+       
     }
 
     exportCoursesData() {

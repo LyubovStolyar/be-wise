@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/api.service';
@@ -38,5 +39,7 @@ imagePath(image: string | null): string {
 
   return !image ? '' : `../../assets/images/${image}.jpg`;
 }
+
+
 
 }
